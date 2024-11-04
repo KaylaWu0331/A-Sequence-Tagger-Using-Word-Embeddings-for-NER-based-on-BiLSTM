@@ -1,23 +1,24 @@
 # A Sequence Tagger Using Word Embeddings for NER based on BiLSTM
 ## Project Description:
-In this project, I first implement a simple sequence tagger using word embeddings for named entity recognition, where the architecture is a bidirectional LSTM with a single 100-dimensional hidden layer.
-Furthermore, I use the following parameters in the training phase:
-- Crossentropy-loss and the Adam optimizer
-- Train for 20 Epochs
-- Set the batch-size to 1
+This project presents the implementation of a sequence tagger for Named Entity Recognition (NER) using word embeddings, leveraging a bidirectional Long Short-Term Memory (BiLSTM) network. The model architecture consists of a BiLSTM layer with a single 100-dimensional hidden unit.
 
-## Environment:
+## Key Features of the Model
+- Utilizes cross-entropy loss as the loss function and the Adam optimizer for model training.
+- Trained over 20 epochs with a batch size of 1.
+
+## Environment Setup
+The project has been developed using the following environment:
 - Python 3.6
 - Third-Party Library: PyTorch, Numpy, Pandas
 
 ## Data Description:
-The data is already split into a train, dev, and test set. The input tokens are specified in the first column and the labels are in last column.
+The dataset used in this project is pre-split into training, development, and test sets. The input tokens are provided in the first column, and the corresponding labels are presented in the last column.
 
 ## Word Embedding:
-I adopt [Global Vectors for Word Representation(GloVe)](https://nlp.stanford.edu/projects/glove/) in word embeddings. Specifically, the pre-trained word vectors are selected from Wikipedia 2014 + Gigaword 5 (6B tokens, 400K vocab, uncased, 50d vectors). Here is [the download URL](https://nlp.stanford.edu/data/glove.6B.zip).
+I adopt [Global Vectors for Word Representation(GloVe)](https://nlp.stanford.edu/projects/glove/) in word embeddings. Specifically, pre-trained word vectors derived from Wikipedia 2014 and Gigaword 5 are utilized (6B tokens, 400K vocab, uncased, 50d vectors). The embeddings can be downloaded from [this link](https://nlp.stanford.edu/data/glove.6B.zip).
 
 ## Result:
-I record the macro-averaged F1 scores on the dev data (for all 20 epochs) and the macro-averaged F1 scores of the final model on the test data.
+The model performance is evaluated by recording the macro-averaged F1 scores on the development set across all 20 epochs, as well as the final macro-averaged F1 score on the test set. The results are as follows:
 ```Python
 outputs:
 The 1th epoch: The marco F1 score on dev dataset:  0.875115188277595
